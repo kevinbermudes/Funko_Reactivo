@@ -1,80 +1,46 @@
 package org.example.models;
 
-import com.google.gson.annotations.Expose;
+
+import lombok.Builder;
+import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.UUID;
+
+@Data
+@Builder
 
 public class Funko {
-    @Expose
-    private Long id;
+    @Builder.Default
+    private long id = IdGenerator.getInstance().generateId();
 
-    @Expose
-    private final String cod;
-    @Expose
-    private final String nombre;
-    @Expose
-    private final String modelo;
-    @Expose
+    @Builder.Default
+    private UUID cod = UUID.randomUUID();
+    private String nombre;
+    private Modelo modelo;
     private double precio;
-    @Expose
-    private final LocalDate fecha;
-    @Expose
-    private LocalDateTime ultimoAcceso;
+    private LocalDate fechaLanzamiento;
+    @Builder.Default
+    private LocalDateTime createdAt = LocalDateTime.now();
+    @Builder.Default
+    private LocalDateTime updatedAt = LocalDateTime.now();
 
-    public Funko(Long id, String cod, String nombre, String modelo, Double precio, LocalDate fecha) {
+
+    public Funko(long id, UUID cod, String nombre, Modelo modelo, double precio, LocalDate fechaLanzamiento, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.cod = cod;
         this.nombre = nombre;
         this.modelo = modelo;
         this.precio = precio;
-        this.fecha = fecha;
+        this.fechaLanzamiento = fechaLanzamiento;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
-    public LocalDateTime  getUltimoAcceso() {
-        return ultimoAcceso;
+
+    public enum Modelo {
+        MARVEL, DISNEY, ANIME, OTROS
     }
 
-    public void setUltimoAcceso(LocalDateTime ultimoAcceso) {
-        this.ultimoAcceso = ultimoAcceso;
-    }
-
-    @Override
-    public String toString() {
-        return "Funko{" +
-                "id=" + id +
-                ", cod='" + cod + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", precio=" + precio +
-                ", fecha=" + fecha +
-                '}';
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getCod() {
-        return cod;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setId(long aLong) {
-    }
 }

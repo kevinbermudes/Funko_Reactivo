@@ -1,29 +1,15 @@
 package org.example.repositories.Crud;
 
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
+import org.example.models.Funko;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
+public interface CrudRepository <T,ID>{
+    Flux<Funko> findAll();
+    Mono<Funko> findById(ID id);
+    Mono<Funko> save(T t);
+    Mono<Funko> update(T t);
+    Mono<Boolean> deleteById(ID id);
+    Mono<Void> deleteAll();
 
-public interface CrudRepository<T, ID> {
-    // Métodos que vamos a usar
-
-    // Guardar
-    CompletableFuture<T> save(T t) throws SQLException;
-
-    // Actualizar
-    CompletableFuture<T> update(T t) throws SQLException;
-
-    // Buscar por ID
-    CompletableFuture<Optional<T>> findById(ID id) throws SQLException;
-
-    // Buscar todos
-    CompletableFuture<List<T>> findAll() throws SQLException;
-
-    // Borrar por ID
-    CompletableFuture<Boolean> deleteById(ID id) throws SQLException;
-
-    // Borrar todos
-    CompletableFuture<Void> deleteAll() throws SQLException;
 }

@@ -1,25 +1,22 @@
 package org.example.models;
 
 
+
+import java.util.concurrent.atomic.AtomicLong;
+
 public class IdGenerator {
 
-    private long currentId = 0;
+    private static final IdGenerator instance = new IdGenerator();
 
-    private static IdGenerator instance;
+    private AtomicLong currentId = new AtomicLong(0);
 
+    private IdGenerator() {}
 
-    private IdGenerator() { }
-
-
-    public static synchronized IdGenerator getInstance() {
-        if (instance == null) {
-            instance = new IdGenerator();
-        }
+    public static IdGenerator getInstance() {
         return instance;
     }
 
-    public synchronized long generateNewId() {
-        return ++currentId;
+    public long generateId() {
+        return currentId.incrementAndGet();
     }
 }
-
