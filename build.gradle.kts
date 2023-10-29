@@ -44,6 +44,8 @@ dependencies {
 
     // Logger
     implementation("ch.qos.logback:logback-classic:1.4.11")
+    //reactor tests
+    testImplementation("io.projectreactor:reactor-test:3.5.10")
 
 }
 

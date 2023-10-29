@@ -2,6 +2,7 @@ package org.example.repositories.Funkos;
 
 import io.r2dbc.pool.ConnectionPool;
 import io.r2dbc.spi.Result;
+import io.r2dbc.spi.Row;
 import org.example.models.Funko;
 import org.example.models.IdGenerator;
 import org.example.services.Funkos.FunkoServicelmpl;
@@ -35,26 +36,32 @@ public class Funkorepositorylmpl implements FunkoRepository {
         }
         return instance;
     }
+    private Funko getBuild(Row row) {
+        return Funko.builder()
+                .id(row.get("id", Long.class))
+                .cod(UUID.fromString(row.get("cod", String.class)))
+                .nombre(row.get("nombre", String.class))
+                .modelo(Funko.Modelo.valueOf(row.get("modelo", String.class)))
+                .precio(row.get("precio", Double.class))
+                .fechaLanzamiento(row.get("fechaLanzamiento", LocalDate.class))
+                .createdAt(row.get("createdAt", LocalDateTime.class))
+                .updatedAt(row.get("updatedAt", LocalDateTime.class))
+                .build();
+    }
+
     @Override
     public Flux<Funko> findAll() {
     logger.debug("Buscando todos los funkos");
-    String sql = "SELECT * FROM FUNKOS";
-    return Flux.usingWhen(
-            connectionFactory.create(),
-            connection -> Flux.from(connection.createStatement(sql).execute())
-                    .flatMap(result -> result.map((row, rowMetadata) ->
-                            Funko.builder()
-                                    .cod(row.get("Codigo", UUID.class))
-                                    .nombre(row.get("Nombre", String.class))
-                                    .modelo(Funko.Modelo.valueOf(row.get("Modelo", String.class)))
-                                    .precio(row.get("Precio", Double.class))
-                                    .fechaLanzamiento(row.get("FechaLanzamiento", LocalDate.class))
-                                    .createdAt(row.get("created_at", LocalDateTime.class))
-                                    .updatedAt(row.get("updated_at", LocalDateTime.class))
-                            .build()
-                    )),
-            Connection::close
-    );
+        logger.debug("Buscando todo los Funkos");
+        String sql = "SELECT * FROM FUNKOS";
+        return Flux.usingWhen(
+                connectionFactory.create(),
+                connection -> Flux.from(connection.createStatement(sql).execute())
+                        .flatMap(result -> result.map((row, rowMetadata) ->
+                                getBuild(row)
+                        )),
+                Connection::close
+        );
     }
 
     @Override
@@ -67,15 +74,7 @@ public class Funkorepositorylmpl implements FunkoRepository {
                         .bind(0, id)
                         .execute()
                 ).flatMap(result -> Mono.from(result.map((row, rowMetadata) ->
-                        Funko.builder()
-                                .cod(row.get("Codigo", UUID.class))
-                                .nombre(row.get("Nombre", String.class))
-                                .modelo(Funko.Modelo.valueOf(row.get("Modelo", String.class)))
-                                .precio(row.get("Precio", Double.class))
-                                .fechaLanzamiento(row.get("FechaLanzamiento", LocalDate.class))
-                                .createdAt(row.get("created_at", LocalDateTime.class))
-                                .updatedAt(row.get("updated_at", LocalDateTime.class))
-                                .build()
+                        getBuild(row)
                 ))),
                 Connection::close
         );
@@ -155,23 +154,15 @@ public class Funkorepositorylmpl implements FunkoRepository {
     @Override
     public Flux<Funko> findByNombrel(String nombre) {
         logger.debug("Buscando todos los funkos por nombre");
-        String sql = "SELECT * FROM FUNKOS WHERE nombre LIKE ?";
+        String sql = "SELECT * FROM FUNKOS WHERE nombre = ?";
         return Flux.usingWhen(
                 connectionFactory.create(),
                 connection -> Flux.from(connection.createStatement(sql)
-                        .bind(0, "%" + nombre + "%")
+                        .bind(0, nombre)
                         .execute()
-                ).flatMap(result -> result.map((row, rowMetadata) ->
-                        Funko.builder()
-                                .cod(row.get("cod", UUID.class))
-                                .nombre(row.get("nombre", String.class))
-                                .modelo(Funko.Modelo.valueOf(row.get("modelo", String.class)))
-                                .precio(row.get("precio", Double.class))
-                                .fechaLanzamiento(row.get("fecha_lanzamiento", java.time.LocalDate.class))
-                                .createdAt(row.get("created_at", java.time.LocalDateTime.class))
-                                .updatedAt(row.get("updated_at", java.time.LocalDateTime.class))
-                                .build()
-                )),
+                ).flatMap(result -> Flux.from(result.map((row, rowMetadata) ->
+                        getBuild(row)
+                ))),
                 Connection::close
         );
     }

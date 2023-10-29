@@ -1,0 +1,43 @@
+
+q
+java:S1192F"ODefine a constant instead of duplicating this literal " no encontrado" 4 times.(ğŠç©üÿÿÿÿ8¹ÕÑİ·1
+S
+java:S2629<"7Use the built-in formatting to construct this argument.(“øÂ"8»ÕÑİ·1
+Y
+java:S2629L"7Use the built-in formatting to construct this argument.( ¹ëùıÿÿÿÿ8»ÕÑİ·1
+T
+java:S2629U"7Use the built-in formatting to construct this argument.(“æ™å8»ÕÑİ·1
+T
+java:S2629["7Use the built-in formatting to construct this argument.(ÂÕıÿ8»ÕÑİ·1
+Y
+java:S2629b"7Use the built-in formatting to construct this argument.(Óéúÿÿÿÿ8»ÕÑİ·1
+S
+java:S2629l"7Use the built-in formatting to construct this argument.(üÈ±I8»ÕÑİ·1
+T
+java:S2629t"7Use the built-in formatting to construct this argument.(ÉÏˆö8»ÕÑİ·1
+Y
+java:S2629}"7Use the built-in formatting to construct this argument.(•’áîüÿÿÿÿ8»ÕÑİ·1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ç÷¯†ûÿÿÿÿ8½ÕÑİ·1
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(™ˆ“›8ĞÕÑİ·1
+u
+java:S3008"SRename this field "Instance" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ˆŒÌüÿÿÿÿ8ĞÕÑİ·1
+]
+java:S3457<"AFormat specifiers should be used instead of string concatenation.(“øÂ"8ÛÕÑİ·1
+c
+java:S3457L"AFormat specifiers should be used instead of string concatenation.( ¹ëùıÿÿÿÿ8ãÕÑİ·1
+^
+java:S3457U"AFormat specifiers should be used instead of string concatenation.(“æ™å8çÕÑİ·1
+^
+java:S3457["AFormat specifiers should be used instead of string concatenation.(ÂÕıÿ8éÕÑİ·1
+c
+java:S3457b"AFormat specifiers should be used instead of string concatenation.(Óéúÿÿÿÿ8ìÕÑİ·1
+]
+java:S3457l"AFormat specifiers should be used instead of string concatenation.(üÈ±I8òÕÑİ·1
+^
+java:S3457t"AFormat specifiers should be used instead of string concatenation.(ÉÏˆö8õÕÑİ·1
+c
+java:S3457}"AFormat specifiers should be used instead of string concatenation.(•’áîüÿÿÿÿ8øÕÑİ·1
+o
+java:S2677‘"LUse or store the value returned from "readLine" instead of throwing it away.(£­—âÿÿÿÿÿ8¿ş®Ş·1
+e
+java:S1128"CRemove this unused import 'org.example.Controller.FunkoController'.(©Ãï¡ıÿÿÿÿ8Ó’¯Ş·1

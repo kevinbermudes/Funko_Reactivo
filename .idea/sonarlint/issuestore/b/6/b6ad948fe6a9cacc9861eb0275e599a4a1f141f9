@@ -1,0 +1,26 @@
+
+Y
+java:S2629E"7Use the built-in formatting to construct this argument.(Š‰Ã‹ıÿÿÿÿ8€…—à·1
+T
+java:S2629W"7Use the built-in formatting to construct this argument.(÷èºÀ8…—à·1
+S
+java:S2629l"7Use the built-in formatting to construct this argument.(üÈ±I8…—à·1
+Z
+java:S2629€"7Use the built-in formatting to construct this argument.(îÖäùûÿÿÿÿ8…—à·1
+U
+java:S2629¬"7Use the built-in formatting to construct this argument.(’øÅ8…—à·1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(şÙÂöıÿÿÿÿ8„…—à·1
+c
+java:S3457E"AFormat specifiers should be used instead of string concatenation.(Š‰Ã‹ıÿÿÿÿ8¼…—à·1
+^
+java:S3457W"AFormat specifiers should be used instead of string concatenation.(÷èºÀ8Á…—à·1
+]
+java:S3457l"AFormat specifiers should be used instead of string concatenation.(üÈ±I8Æ…—à·1
+d
+java:S3457€"AFormat specifiers should be used instead of string concatenation.(îÖäùûÿÿÿÿ8Ì…—à·1
+_
+java:S3457¬"AFormat specifiers should be used instead of string concatenation.(’øÅ8Ö…—à·1
+W
+java:S1128";Remove this unused import 'org.example.models.IdGenerator'.(›Ñd8â…—à·1
+k
+java:S1128"IRemove this unused import 'org.example.services.Funkos.FunkoServicelmpl'.(õ™¬ôùÿÿÿÿ8â…—à·1

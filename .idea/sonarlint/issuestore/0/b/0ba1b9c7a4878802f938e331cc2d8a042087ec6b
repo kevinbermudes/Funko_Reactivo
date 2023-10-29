@@ -1,0 +1,30 @@
+
+L	java:S106"+Replace this use of System.out by a logger.(¤é¹ºıÿÿÿÿ8ÍÙïà·1
+L	java:S106"+Replace this use of System.out by a logger.(ìÓ¬Óÿÿÿÿÿ8ÎÙïà·1
+G	java:S106"+Replace this use of System.out by a logger.(È”°8ĞÙïà·1
+L	java:S106"+Replace this use of System.out by a logger.(Çñ€åøÿÿÿÿ8ÑÙïà·1
+L	java:S106"+Replace this use of System.out by a logger.(…’Œ•øÿÿÿÿ8ÒÙïà·1
+G	java:S106!"+Replace this use of System.out by a logger.(ÉŸî¢8ıÙïà·1
+F	java:S106%"+Replace this use of System.err by a logger.(Ô‰Á8şÙïà·1
+G	java:S106'"+Replace this use of System.out by a logger.(¬¼Â8ÿÙïà·1
+G	java:S106*"+Replace this use of System.out by a logger.(¶±àÜ8ÿÙïà·1
+G	java:S106-"+Replace this use of System.out by a logger.(áÕé´8€Úïà·1
+G	java:S1064"+Replace this use of System.out by a logger.(á•¼í8‚Úïà·1
+G	java:S106;"+Replace this use of System.out by a logger.(¿ğ‰8ƒÚïà·1
+G	java:S106B"+Replace this use of System.out by a logger.(×©¹”8…Úïà·1
+N
+java:S1602C",Remove useless curly braces around statement(·Ë‹ûşÿÿÿÿ8†Úïà·1
+L	java:S106D"+Replace this use of System.out by a logger.(¸óïèÿÿÿÿÿ8†Úïà·1
+G	java:S106J"+Replace this use of System.out by a logger.(Ú¹ŠŒ8ˆÚïà·1
+L	java:S106N"+Replace this use of System.out by a logger.(ùœºúÿÿÿÿ8‰Úïà·1
+L	java:S106Q"+Replace this use of System.out by a logger.(Ÿ†º•ûÿÿÿÿ8ŠÚïà·1
+G	java:S106S"+Replace this use of System.err by a logger.(È®’8ŠÚïà·1
+G	java:S106T"+Replace this use of System.out by a logger.(‚ƒÁı8‹Úïà·1
+G
+java:S3457X"%String contains no format specifiers.(ÿ¢† şÿÿÿÿ8»Ïòà·1
+L	java:S106X"+Replace this use of System.out by a logger.(ÿ¢† şÿÿÿÿ8¼Ïòà·1
+k
+java:S1128"IRemove this unused import 'org.example.services.Funkos.FunkoServicelmpl'.(õ™¬ôùÿÿÿÿ8Úïà·1
+^
+java:S1128
+"ARemove this unused import 'org.example.models.Notificacion.Tipo'.(ùîä8Úïà·1

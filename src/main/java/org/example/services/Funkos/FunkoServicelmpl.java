@@ -1,7 +1,9 @@
 package org.example.services.Funkos;
 
+import org.example.Controller.FunkoController;
 import org.example.exceptions.FunkoNoEncontrado;
 import org.example.models.Funko;
+import org.example.models.IdGenerator;
 import org.example.models.Notificacion;
 import org.example.repositories.Funkos.FunkoRepository;
 import org.slf4j.Logger;
@@ -9,6 +11,13 @@ import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class FunkoServicelmpl implements FunkoServices{
@@ -127,5 +136,35 @@ public class FunkoServicelmpl implements FunkoServices{
         return funkorepository.deleteAll()
                 .then(Mono.empty());
     }
+    public Flux<Funko> importarCSV() {
+        logger.debug("Importando funkos desde un archivo");
+        var fileCSV = Paths.get("").toAbsolutePath().toString() + File.separator + "data" + File.separator + "funkos.csv";
+
+        return Flux.create(emitter -> {
+            try (BufferedReader reader = new BufferedReader(new FileReader(fileCSV))) {
+                reader.readLine();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    Funko funko = getFunkoFromLine(line);
+                    emitter.next(funko);
+                }
+                emitter.complete();
+            } catch (IOException e) {
+                emitter.error(e);
+            }
+        });
+    }
+
+    private Funko getFunkoFromLine(String line) {
+        String[] parts = line.split(",");
+        UUID cod = UUID.fromString(parts[0].substring(1, 36).trim());
+        String nombre = parts[1].trim();
+        Funko.Modelo modelo = Funko.Modelo.valueOf(parts[2].trim());
+        Double precio = Double.valueOf(parts[3].trim());
+        LocalDate fecha = LocalDate.parse(parts[4].trim());
+        Long id = IdGenerator.getInstance().generateId();
+        return new Funko(id, cod, nombre, modelo, precio, fecha, LocalDateTime.now(), LocalDateTime.now());
+    }
+
 
 }

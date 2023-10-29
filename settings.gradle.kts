@@ -1,2 +1,2 @@
-rootProject.name = "Funko_asincrono"
+rootProject.name = "Funko_reactivo"
 

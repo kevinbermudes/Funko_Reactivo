@@ -1,0 +1,20 @@
+
+T
+java:S2629""7Use the built-in formatting to construct this argument.(şÓ£Ë8šÉ¡µ1
+Y
+java:S2629("7Use the built-in formatting to construct this argument.(ˆ×ƒøÿÿÿÿ8šÉ¡µ1
+Y
+java:S2629."7Use the built-in formatting to construct this argument.(æõ¶Åıÿÿÿÿ8šÉ¡µ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ç÷¯†ûÿÿÿÿ8º±Ôµ1
+>
+java:S1170"!Make this final field static too.(µéÂ»8¯É¡µ1
+R
+java:S1172"0Remove this unused method parameter "cacheSize".(ì™øíÿÿÿÿÿ8‹¶Û×·1
+^
+java:S3457""AFormat specifiers should be used instead of string concatenation.(şÓ£Ë8½É¡µ1
+c
+java:S3457("AFormat specifiers should be used instead of string concatenation.(ˆ×ƒøÿÿÿÿ8ÀÉ¡µ1
+c
+java:S3457."AFormat specifiers should be used instead of string concatenation.(æõ¶Åıÿÿÿÿ8ÁÉ¡µ1
+^
+java:S34576"AFormat specifiers should be used instead of string concatenation.(ıÌâÕ8ÉÉ¡µ1
